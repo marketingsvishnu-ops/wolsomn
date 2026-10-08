@@ -226,4 +226,1373 @@
     .athlete-card{
       position:absolute;
       inset:35px 20px 35px 50px;
+      background:linear-gradient(145deg,#08111f,#122d4d);
+      border-radius:40px;
+      overflow:hidden;
+      box-shadow:30px 35px 70px rgba(13,40,75,.22);
+    }
+
+    .athlete-card::before{
+      content:"";
+      position:absolute;
+      width:300px;
+      height:300px;
+      border-radius:50%;
+      background:rgba(0,198,255,.22);
+      filter:blur(20px);
+      top:-80px;
+      right:-80px;
+    }
+
+    .athlete-card::after{
+      content:"";
+      position:absolute;
+      width:250px;
+      height:250px;
+      border-radius:50%;
+      background:rgba(20,100,255,.2);
+      filter:blur(25px);
+      bottom:-100px;
+      left:-70px;
+    }
+
+    .runner{
+      position:absolute;
+      width:180px;
+      height:360px;
+      left:50%;
+      top:50%;
+      transform:translate(-50%,-50%);
+    }
+
+    .head{
+      width:58px;
+      height:58px;
+      background:#d6e9ff;
+      border-radius:50%;
+      position:absolute;
+      top:5px;
+      left:75px;
+    }
+
+    .body-shape{
+      position:absolute;
+      top:60px;
+      left:63px;
+      width:82px;
+      height:155px;
+      background:linear-gradient(145deg,#1680ff,#00c6ff);
+      border-radius:45px 45px 25px 25px;
+      transform:rotate(-10deg);
+    }
+
+    .leg{
+      position:absolute;
+      width:30px;
+      height:170px;
+      background:#d7e9fa;
+      border-radius:20px;
+      top:185px;
+    }
+
+    .leg.one{
+      left:60px;
+      transform:rotate(16deg);
+    }
+
+    .leg.two{
+      left:115px;
+      transform:rotate(-25deg);
+    }
+
+    .arm{
+      position:absolute;
+      width:25px;
+      height:130px;
+      background:#d7e9fa;
+      border-radius:20px;
+      top:75px;
+    }
+
+    .arm.one{
+      left:48px;
+      transform:rotate(38deg);
+    }
+
+    .arm.two{
+      right:35px;
+      transform:rotate(-50deg);
+    }
+
+    .floating-stat{
+      position:absolute;
+      background:rgba(255,255,255,.94);
+      padding:15px 18px;
+      border-radius:16px;
+      box-shadow:0 15px 35px rgba(0,0,0,.15);
+      z-index:5;
+      animation:float 4s ease-in-out infinite;
+    }
+
+    .floating-stat strong{
+      display:block;
+      font-family:"Space Grotesk";
+      font-size:24px;
+    }
+
+    .floating-stat small{
+      color:#738197;
+    }
+
+    .stat-one{
+      top:80px;
+      left:-15px;
+    }
+
+    .stat-two{
+      bottom:70px;
+      right:-20px;
+      animation-delay:1s;
+    }
+
+    @keyframes float{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-12px)}
+    }
+
+    /* STATS */
+    .stats{
+      margin-top:-65px;
+      position:relative;
+      z-index:10;
+    }
+
+    .stats-box{
+      background:white;
+      border:1px solid var(--border);
+      box-shadow:0 20px 50px rgba(20,50,80,.08);
+      border-radius:22px;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      padding:28px;
+    }
+
+    .stat{
+      text-align:center;
+      border-right:1px solid var(--border);
+    }
+
+    .stat:last-child{
+      border-right:0;
+    }
+
+    .stat strong{
+      display:block;
+      font-family:"Space Grotesk";
+      font-size:30px;
+      color:var(--dark);
+    }
+
+    .stat span{
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    /* SECTION */
+    section{
+      padding:110px 0;
+    }
+
+    .section-head{
+      text-align:center;
+      max-width:700px;
+      margin:0 auto 55px;
+    }
+
+    .section-tag{
+      color:var(--blue);
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:2px;
+      text-transform:uppercase;
+    }
+
+    .section-head h2{
+      font-family:"Space Grotesk";
+      font-size:clamp(36px,5vw,58px);
+      line-height:1;
+      letter-spacing:-3px;
+      margin-top:12px;
+    }
+
+    .section-head p{
+      color:var(--muted);
+      margin-top:17px;
+      line-height:1.7;
+    }
+
+    /* PROGRAMS */
+    .programs{
+      background:#f7faff;
+    }
+
+    .program-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+
+    .program{
+      padding:30px;
+      background:white;
+      border:1px solid var(--border);
+      border-radius:22px;
+      transition:.4s;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .program:hover{
+      transform:translateY(-10px);
+      box-shadow:0 25px 55px rgba(25,70,110,.1);
+    }
+
+    .program-number{
+      font-family:"Space Grotesk";
+      color:#d9e7f7;
+      font-size:60px;
+      font-weight:800;
+    }
+
+    .program h3{
+      font-family:"Space Grotesk";
+      font-size:25px;
+      margin-top:15px;
+    }
+
+    .program p{
+      color:var(--muted);
+      line-height:1.7;
+      margin-top:12px;
+    }
+
+    .program ul{
+      list-style:none;
+      margin-top:20px;
+    }
+
+    .program li{
+      padding:9px 0;
+      border-bottom:1px solid #edf2f7;
+      font-size:14px;
+    }
+
+    .program li::before{
+      content:"✓";
+      color:var(--blue);
+      font-weight:900;
+      margin-right:8px;
+    }
+
+    /* PERFORMANCE */
+    .performance-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:70px;
+      align-items:center;
+    }
+
+    .dashboard{
+      padding:25px;
+      border-radius:28px;
+      background:#08111f;
+      color:white;
+      box-shadow:0 25px 60px rgba(8,17,31,.18);
+    }
+
+    .dash-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .dash-title{
+      font-family:"Space Grotesk";
+      font-size:20px;
+    }
+
+    .live{
+      padding:7px 10px;
+      border-radius:20px;
+      background:rgba(24,215,123,.12);
+      color:#48e58e;
+      font-size:11px;
+      font-weight:800;
+    }
+
+    .chart{
+      height:230px;
+      margin-top:30px;
+      display:flex;
+      align-items:end;
+      gap:10px;
+      padding:15px 0;
+    }
+
+    .bar{
+      flex:1;
+      border-radius:8px 8px 2px 2px;
+      background:linear-gradient(to top,var(--blue),var(--cyan));
+      animation:grow 1.5s ease both;
+    }
+
+    @keyframes grow{
+      from{height:0!important}
+    }
+
+    .b1{height:30%}
+    .b2{height:48%}
+    .b3{height:42%}
+    .b4{height:65%}
+    .b5{height:58%}
+    .b6{height:82%}
+    .b7{height:73%}
+    .b8{height:94%}
+
+    .performance-copy h2{
+      font-family:"Space Grotesk";
+      font-size:52px;
+      line-height:1;
+      letter-spacing:-3px;
+    }
+
+    .performance-copy p{
+      color:var(--muted);
+      line-height:1.8;
+      margin-top:22px;
+    }
+
+    .feature-list{
+      margin-top:25px;
+      display:grid;
+      gap:14px;
+    }
+
+    .feature{
+      display:flex;
+      align-items:center;
+      gap:13px;
+      font-weight:700;
+    }
+
+    .check{
+      width:27px;
+      height:27px;
+      display:grid;
+      place-items:center;
+      background:#e8f2ff;
+      color:var(--blue);
+      border-radius:50%;
+      font-size:13px;
+    }
+
+    /* PRICING */
+    .pricing{
+      background:#f7faff;
+    }
+
+    .price-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+
+    .price-card{
+      background:white;
+      border:1px solid var(--border);
+      border-radius:24px;
+      padding:32px;
+      position:relative;
+    }
+
+    .price-card.featured{
+      background:var(--dark);
+      color:white;
+      transform:translateY(-12px);
+      box-shadow:0 25px 55px rgba(8,17,31,.18);
+    }
+
+    .popular{
+      position:absolute;
+      top:18px;
+      right:18px;
+      background:var(--blue);
+      color:white;
+      padding:7px 10px;
+      border-radius:20px;
+      font-size:10px;
+      font-weight:800;
+    }
+
+    .price-card h3{
+      font-family:"Space Grotesk";
+      font-size:23px;
+    }
+
+    .price{
+      font-family:"Space Grotesk";
+      font-size:48px;
+      font-weight:800;
+      margin:18px 0;
+    }
+
+    .price small{
+      font-family:"DM Sans";
+      font-size:14px;
+      font-weight:400;
+      color:#8a98a9;
+    }
+
+    .price-card ul{
+      list-style:none;
+      margin:25px 0;
+    }
+
+    .price-card li{
+      padding:10px 0;
+      color:#718096;
+      border-bottom:1px solid #edf1f5;
+      font-size:14px;
+    }
+
+    .featured li{
+      color:#b9c6d6;
+      border-color:#23344a;
+    }
+
+    .price-card li::before{
+      content:"✓";
+      color:var(--blue);
+      margin-right:8px;
+      font-weight:bold;
+    }
+
+    .price-btn{
+      display:block;
+      text-align:center;
+      padding:13px;
+      border:1px solid #dce6f0;
+      border-radius:11px;
+      font-weight:800;
+    }
+
+    .featured .price-btn{
+      background:var(--blue);
+      border-color:var(--blue);
+      color:white;
+    }
+
+    /* TRAINERS */
+    .trainer-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+
+    .trainer{
+      background:white;
+      border:1px solid var(--border);
+      border-radius:22px;
+      padding:18px;
+      transition:.4s;
+    }
+
+    .trainer:hover{
+      transform:translateY(-8px);
+      box-shadow:0 20px 45px rgba(30,60,100,.1);
+    }
+
+    .trainer-photo{
+      height:280px;
+      border-radius:16px;
+      background:
+        radial-gradient(circle at 50% 30%,#b9dcff 0 12%,transparent 12.5%),
+        linear-gradient(145deg,#e8f5ff,#bddcff);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .trainer-photo::after{
+      content:"";
+      position:absolute;
+      width:150px;
+      height:210px;
+      background:linear-gradient(145deg,#176cff,#00c6ff);
+      border-radius:80px 80px 30px 30px;
+      bottom:-40px;
+      left:50%;
+      transform:translateX(-50%);
+    }
+
+    .trainer h3{
+      font-family:"Space Grotesk";
+      font-size:21px;
+      margin:17px 5px 4px;
+    }
+
+    .trainer p{
+      color:var(--muted);
+      font-size:13px;
+      margin-left:5px;
+    }
+
+    /* BMI */
+    .bmi{
+      background:linear-gradient(135deg,#0a1728,#102d4b);
+      color:white;
+    }
+
+    .bmi-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:60px;
+      align-items:center;
+    }
+
+    .bmi-copy h2{
+      font-family:"Space Grotesk";
+      font-size:52px;
+      line-height:1;
+      letter-spacing:-3px;
+    }
+
+    .bmi-copy p{
+      color:#a9b8c9;
+      margin-top:20px;
+      line-height:1.8;
+    }
+
+    .calculator{
+      background:white;
+      color:var(--text);
+      padding:30px;
+      border-radius:25px;
+    }
+
+    .calculator h3{
+      font-family:"Space Grotesk";
+      font-size:24px;
+      margin-bottom:20px;
+    }
+
+    .input-group{
+      margin-bottom:15px;
+    }
+
+    .input-group label{
+      display:block;
+      font-size:12px;
+      font-weight:700;
+      margin-bottom:7px;
+      color:#64748b;
+    }
+
+    .input-group input{
+      width:100%;
+      padding:13px;
+      border:1px solid #dbe5ef;
+      border-radius:10px;
+      outline:none;
+      font:inherit;
+    }
+
+    .input-group input:focus{
+      border-color:var(--blue);
+    }
+
+    .calc-btn{
+      width:100%;
+      border:0;
+      padding:14px;
+      border-radius:10px;
+      background:var(--blue);
+      color:white;
+      font-weight:800;
+      cursor:pointer;
+      font:inherit;
+    }
+
+    #bmiResult{
+      margin-top:18px;
+      padding:14px;
+      border-radius:10px;
+      background:#f1f7ff;
+      color:var(--blue);
+      text-align:center;
+      font-weight:800;
+      display:none;
+    }
+
+    /* CTA */
+    .cta{
+      padding:90px 0;
+    }
+
+    .cta-box{
+      background:
+        radial-gradient(circle at 90% 20%,rgba(0,198,255,.3),transparent 30%),
+        linear-gradient(135deg,#1464ff,#0747cc);
+      color:white;
+      border-radius:32px;
+      padding:70px;
+      text-align:center;
+      overflow:hidden;
+      position:relative;
+    }
+
+    .cta-box h2{
+      font-family:"Space Grotesk";
+      font-size:clamp(38px,5vw,65px);
+      letter-spacing:-3px;
+    }
+
+    .cta-box p{
+      margin:18px auto 28px;
+      max-width:600px;
+      color:#dbeaff;
+      line-height:1.7;
+    }
+
+    .cta-box a{
+      display:inline-block;
+      background:white;
+      color:var(--blue);
+      padding:15px 24px;
+      border-radius:11px;
+      font-weight:800;
+    }
+
+    /* FOOTER */
+    footer{
+      background:#07101d;
+      color:white;
+      padding:60px 0 25px;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:2fr 1fr 1fr 1fr;
+      gap:40px;
+      padding-bottom:45px;
+      border-bottom:1px solid #1b2a3c;
+    }
+
+    .footer-brand p{
+      color:#8494a8;
+      max-width:330px;
+      line-height:1.7;
+      margin-top:15px;
+    }
+
+    footer h4{
+      margin-bottom:17px;
+      font-family:"Space Grotesk";
+    }
+
+    footer ul{
+      list-style:none;
+    }
+
+    footer li{
+      color:#8494a8;
+      margin:10px 0;
+      font-size:14px;
+    }
+
+    .copyright{
+      text-align:center;
+      color:#66778c;
+      padding-top:25px;
+      font-size:13px;
+    }
+
+    /* REVEAL */
+    .reveal{
+      opacity:0;
+      transform:translateY(35px);
+      transition:opacity .8s ease,transform .8s ease;
+    }
+
+    .reveal.show{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:900px){
+      .nav-links{
+        display:none;
+      }
+
+      .hero-grid,
+      .performance-grid,
+      .bmi-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero{
+        padding-top:140px;
+      }
+
+      .hero-visual{
+        min-height:450px;
+      }
+
+      .program-grid,
+      .price-grid,
+      .trainer-grid{
+        grid-template-columns:1fr;
+      }
+
+      .price-card.featured{
+        transform:none;
+      }
+
+      .stats-box{
+        grid-template-columns:repeat(2,1fr);
+        gap:25px;
+      }
+
+      .stat:nth-child(2){
+        border-right:0;
+      }
+
+      .stat:nth-child(-n+2){
+        padding-bottom:20px;
+        border-bottom:1px solid var(--border);
+      }
+
+      .footer-grid{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media(max-width:600px){
+      nav{
+        top:10px;
+      }
+
+      .nav-btn{
+        display:none;
+      }
+
+      h1{
+        letter-spacing:-3px;
+      }
+
+      .hero-actions{
+        flex-direction:column;
+      }
+
+      .hero-actions a{
+        text-align:center;
+      }
+
+      .athlete-card{
+        inset:20px 5px;
+      }
+
+      .floating-stat{
+        transform:scale(.85);
+      }
+
+      .stat strong{
+        font-size:24px;
+      }
+
+      .stats{
+        margin-top:-30px;
+      }
+
+      section{
+        padding:80px 0;
+      }
+
+      .performance-copy h2,
+      .bmi-copy h2{
+        font-size:40px;
+      }
+
+      .cta-box{
+        padding:45px 25px;
+      }
+
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="#" class="logo">
+      <span class="logo-icon">A</span>
+      AEROFIT
+    </a>
+
+    <div class="nav-links">
+      <a href="#programs">Programs</a>
+      <a href="#performance">Performance</a>
+      <a href="#plans">Plans</a>
+      <a href="#trainers">Trainers</a>
+    </div>
+
+    <a href="#join" class="nav-btn">Start Training</a>
+  </nav>
+
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container hero-grid">
+
+      <div class="hero-content reveal">
+        <div class="eyebrow">
+          <span class="pulse"></span>
+          Next Generation Fitness
+        </div>
+
+        <h1>
+          TRAIN<br>
+          <span>SMARTER.</span><br>
+          MOVE BETTER.
+        </h1>
+
+        <p class="hero-text">
+          AEROFIT combines elite coaching, intelligent training and
+          performance technology to help you become stronger, faster
+          and healthier.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#plans" class="primary-btn">Explore Memberships →</a>
+          <a href="#programs" class="secondary-btn">View Programs</a>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+
+        <div class="athlete-card">
+          <div class="runner">
+            <div class="head"></div>
+            <div class="body-shape"></div>
+            <div class="arm one"></div>
+            <div class="arm two"></div>
+            <div class="leg one"></div>
+            <div class="leg two"></div>
+          </div>
+        </div>
+
+        <div class="floating-stat stat-one">
+          <strong>92%</strong>
+          <small>Performance Score</small>
+        </div>
+
+        <div class="floating-stat stat-two">
+          <strong>+38%</strong>
+          <small>Strength Progress</small>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="container">
+      <div class="stats-box reveal">
+
+        <div class="stat">
+          <strong>12K+</strong>
+          <span>Active Members</span>
+        </div>
+
+        <div class="stat">
+          <strong>48</strong>
+          <span>Expert Coaches</span>
+        </div>
+
+        <div class="stat">
+          <strong>96%</strong>
+          <span>Member Satisfaction</span>
+        </div>
+
+        <div class="stat">
+          <strong>24/7</strong>
+          <span>Gym Access</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- PROGRAMS -->
+  <section class="programs" id="programs">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <div class="section-tag">Training Systems</div>
+        <h2>Built Around Your Goal.</h2>
+        <p>
+          Whether you want strength, endurance or a complete transformation,
+          our programs are designed around measurable results.
+        </p>
+      </div>
+
+      <div class="program-grid">
+
+        <div class="program reveal">
+          <div class="program-number">01</div>
+          <h3>Strength Lab</h3>
+          <p>
+            Build serious strength with progressive resistance training
+            and expert coaching.
+          </p>
+
+          <ul>
+            <li>Progressive overload</li>
+            <li>Free-weight training</li>
+            <li>Strength testing</li>
+            <li>Coach support</li>
+          </ul>
+        </div>
+
+        <div class="program reveal">
+          <div class="program-number">02</div>
+          <h3>Conditioning</h3>
+          <p>
+            Improve cardiovascular capacity, stamina and athletic
+            performance.
+          </p>
+
+          <ul>
+            <li>HIIT sessions</li>
+            <li>Cardio zones</li>
+            <li>Agility training</li>
+            <li>Recovery tracking</li>
+          </ul>
+        </div>
+
+        <div class="program reveal">
+          <div class="program-number">03</div>
+          <h3>Body Reset</h3>
+          <p>
+            Build healthier movement patterns while improving mobility,
+            flexibility and body composition.
+          </p>
+
+          <ul>
+            <li>Mobility work</li>
+            <li>Core training</li>
+            <li>Fat-loss plans</li>
+            <li>Nutrition guidance</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PERFORMANCE -->
+  <section id="performance">
+    <div class="container performance-grid">
+
+      <div class="dashboard reveal">
+
+        <div class="dash-top">
+          <div class="dash-title">Weekly Performance</div>
+          <div class="live">● LIVE DATA</div>
+        </div>
+
+        <div class="chart">
+          <div class="bar b1"></div>
+          <div class="bar b2"></div>
+          <div class="bar b3"></div>
+          <div class="bar b4"></div>
+          <div class="bar b5"></div>
+          <div class="bar b6"></div>
+          <div class="bar b7"></div>
+          <div class="bar b8"></div>
+        </div>
+
+      </div>
+
+      <div class="performance-copy reveal">
+        <div class="section-tag">Performance Tracking</div>
+
+        <h2>
+          Your Progress.<br>
+          Measured.
+        </h2>
+
+        <p>
+          Stop guessing whether your workouts are working. Track your
+          strength, endurance and consistency so every training session
+          has a purpose.
+        </p>
+
+        <div class="feature-list">
+
+          <div class="feature">
+            <span class="check">✓</span>
+            Personal performance dashboard
+          </div>
+
+          <div class="feature">
+            <span class="check">✓</span>
+            Monthly fitness assessments
+          </div>
+
+          <div class="feature">
+            <span class="check">✓</span>
+            Trainer progress reviews
+          </div>
+
+          <div class="feature">
+            <span class="check">✓</span>
+            Personalized workout plans
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- PRICING -->
+  <section class="pricing" id="plans">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <div class="section-tag">Membership</div>
+        <h2>Choose Your Level.</h2>
+        <p>
+          Flexible memberships designed for beginners, serious athletes
+          and everyone in between.
+        </p>
+      </div>
+
+      <div class="price-grid">
+
+        <div class="price-card reveal">
+          <h3>Essential</h3>
+
+          <div class="price">
+            $29 <small>/ month</small>
+          </div>
+
+          <ul>
+            <li>24/7 gym access</li>
+            <li>Free fitness assessment</li>
+            <li>Cardio & strength zones</li>
+            <li>Locker access</li>
+          </ul>
+
+          <a href="#join" class="price-btn">Choose Essential</a>
+        </div>
+
+
+        <div class="price-card featured reveal">
+          <div class="popular">MOST POPULAR</div>
+
+          <h3>Performance</h3>
+
+          <div class="price">
+            $59 <small>/ month</small>
+          </div>
+
+          <ul>
+            <li>Everything in Essential</li>
+            <li>4 personal coaching sessions</li>
+            <li>Performance tracking</li>
+            <li>Nutrition consultation</li>
+          </ul>
+
+          <a href="#join" class="price-btn">Choose Performance</a>
+        </div>
+
+
+        <div class="price-card reveal">
+          <h3>Elite</h3>
+
+          <div class="price">
+            $99 <small>/ month</small>
+          </div>
+
+          <ul>
+            <li>Unlimited gym access</li>
+            <li>Unlimited coaching</li>
+            <li>Advanced body assessment</li>
+            <li>Custom nutrition plan</li>
+          </ul>
+
+          <a href="#join" class="price-btn">Choose Elite</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- TRAINERS -->
+  <section id="trainers">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <div class="section-tag">Expert Team</div>
+        <h2>Train With The Best.</h2>
+        <p>
+          Certified coaches who know how to turn hard work into measurable
+          progress.
+        </p>
+      </div>
+
+      <div class="trainer-grid">
+
+        <div class="trainer reveal">
+          <div class="trainer-photo"></div>
+          <h3>Alex Morgan</h3>
+          <p>Strength & Performance Coach</p>
+        </div>
+
+        <div class="trainer reveal">
+          <div class="trainer-photo"></div>
+          <h3>Maya Chen</h3>
+          <p>Mobility & Transformation Coach</p>
+        </div>
+
+        <div class="trainer reveal">
+          <div class="trainer-photo"></div>
+          <h3>Ryan Cole</h3>
+          <p>Athletic Conditioning Coach</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- BMI -->
+  <section class="bmi">
+    <div class="container bmi-grid">
+
+      <div class="bmi-copy reveal">
+        <div class="section-tag">Quick Assessment</div>
+
+        <h2>
+          Know Your<br>
+          Starting Point.
+        </h2>
+
+        <p>
+          Use our simple BMI calculator to get a basic estimate of your
+          body mass index. Your coach can then help you build a more
+          complete fitness plan.
+        </p>
+      </div>
+
+      <div class="calculator reveal">
+
+        <h3>BMI Calculator</h3>
+
+        <div class="input-group">
+          <label>Weight (kg)</label>
+          <input type="number" id="weight" placeholder="e.g. 75">
+        </div>
+
+        <div class="input-group">
+          <label>Height (cm)</label>
+          <input type="number" id="height" placeholder="e.g. 175">
+        </div>
+
+        <button class="calc-btn" onclick="calculateBMI()">
+          Calculate BMI
+        </button>
+
+        <div id="bmiResult"></div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CTA -->
+  <section class="cta" id="join">
+    <div class="container">
+
+      <div class="cta-box reveal">
+        <h2>YOUR NEXT LEVEL<br>STARTS TODAY.</h2>
+
+        <p>
+          Join AEROFIT and get access to intelligent training,
+          expert coaching and a community built around progress.
+        </p>
+
+        <a href="mailto:hello@aerofitgym.com">
+          Book Your Free Tour →
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <div class="logo">
+            <span class="logo-icon">A</span>
+            AEROFIT
+          </div>
+
+          <p>
+            Next-generation fitness for people who want to move,
+            perform and live better.
+          </p>
+        </div>
+
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#programs">Programs</a></li>
+            <li><a href="#performance">Performance</a></li>
+            <li><a href="#plans">Membership</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li>About Us</li>
+            <li>Careers</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Visit</h4>
+          <ul>
+            <li>Open 24/7</li>
+            <li>Dubai, UAE</li>
+            <li>+971 50 123 4567</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="copyright">
+        © 2026 AEROFIT. All Rights Reserved.
+      </div>
+
+    </div>
+  </footer>
+
+
+  <script>
+
+    /* SCROLL REVEAL */
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            entry.target.classList.add("show");
+          }
+        });
+      },
+      {threshold:.12}
+    );
+
+    document.querySelectorAll(".reveal").forEach(el => {
+      observer.observe(el);
+    });
+
+
+    /* BMI CALCULATOR */
+    function calculateBMI(){
+
+      const weight =
+        parseFloat(document.getElementById("weight").value);
+
+      const height =
+        parseFloat(document.getElementById("height").value);
+
+      const result =
+        document.getElementById("bmiResult");
+
+      if(!weight || !height || weight <= 0 || height <= 0){
+        result.style.display = "block";
+        result.innerHTML = "Please enter valid values.";
+        return;
+      }
+
+      const heightMeters = height / 100;
+
+      const bmi =
+        weight / (heightMeters * heightMeters);
+
+      let category = "";
+
+      if(bmi < 18.5){
+        category = "Underweight";
+      }
+      else if(bmi < 25){
+        category = "Healthy Range";
+      }
+      else if(bmi < 30){
+        category = "Overweight";
+      }
+      else{
+        category = "Obesity Range";
+      }
+
+      result.style.display = "block";
+
+      result.innerHTML =
+        `Your BMI is ${bmi.toFixed(1)} — ${category}`;
+    }
+
+
+    /* SMALL MOUSE PARALLAX */
+    const heroVisual =
+      document.querySelector(".hero-visual");
+
+    document.addEventListener("mousemove", e => {
+
+      if(window.innerWidth < 900) return;
+
+      const x =
+        (e.clientX / window.innerWidth - .5) * 10;
+
+      const y =
+        (e.clientY / window.innerHeight - .5) * 10;
+
+      heroVisual.style.transform =
+        `translate(${x}px, ${y}px)`;
+    });
+
+  </script>
+
+</body>
+</html>
 ```
