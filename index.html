@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demo</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+}
+
+body{
+  background:#090909;
+  color:white;
+}
+
+.container{
+  display:flex;
+  flex-direction:row-reverse;
+  min-height:100vh;
+}
+
+.demo{
+  width:70%;
+  background:#111;
+  position:relative;
+}
+
+iframe{
+  width:100%;
+  height:100vh;
+  border:none;
+}
+
+.right{
+  width:30%;
+  padding:30px 22px;
+  background:linear-gradient(180deg,#17110c,#090909);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow-y:auto;
+}
+
+.box{
+  width:100%;
+  background:rgba(10,10,10,.88);
+  border:1px solid #ff7900;
+  border-radius:22px;
+  padding:26px 20px;
+  text-align:center;
+  box-shadow:0 0 35px rgba(255,121,0,.28);
+}
+
+.badge{
+  display:inline-block;
+  background:#ff7900;
+  color:#111;
+  padding:8px 18px;
+  border-radius:30px;
+  font-weight:800;
+  margin-bottom:16px;
+}
+
+h1{
+  font-size:34px;
+  color:#ff9b38;
+  margin-bottom:10px;
+  text-transform:uppercase;
+}
+
+.sub{
+  font-size:17px;
+  line-height:1.5;
+  margin-bottom:22px;
+  color:#eee;
+}
+
+.features{
+  display:grid;
+  gap:12px;
+  margin:22px 0;
+}
+
+.feature{
+  background:linear-gradient(90deg,#111,#241307);
+  border:1px solid rgba(255,121,0,.55);
+  padding:14px;
+  border-radius:14px;
+  font-size:17px;
+  font-weight:700;
+}
+
+.feature span{
+  color:#ff9b38;
+}
+
+/* Signup Button */
+.signup-btn{
+  display:inline-block;
+  margin-top:8px;
+  padding:9px 16px;
+  background:#f57900;
+  color:#fff;
+  text-decoration:none;
+  border-radius:9px;
+  font-size:15px;
+  font-weight:800;
+  border:1px solid #d96500;
+  transition:.3s;
+}
+
+.signup-btn:hover{
+  background:#d96500;
+  transform:scale(1.03);
+}
+
+.website-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-top:16px;
+  font-size:14px;
+  font-weight:bold;
+}
+
+.website-row a{
+  text-decoration:none;
+}
+
+.website{
+  color:#ff7900;
+}
+
+.whatsapp-small{
+  color:#ff9b38;
+}
+
+.cta{
+  display:block;
+  background:#f57900;
+  color:#fff;
+  text-decoration:none;
+  padding:17px;
+  border-radius:16px;
+  font-size:20px;
+  font-weight:900;
+  margin-top:22px;
+  box-shadow:0 8px 18px rgba(245,121,0,.35);
+  transition:.3s;
+}
+
+.cta:hover{
+  transform:scale(1.03);
+  background:#d96500;
+}
+
+/* Floating Signup Button */
+.floating-signup{
+  position:absolute;
+  top:20px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:50;
+  background:#f57900;
+  color:#fff;
+  padding:12px 24px;
+  border-radius:8px;
+  font-size:18px;
+  font-weight:900;
+  border:3px solid #fff;
+  cursor:pointer;
+  box-shadow:0 8px 20px rgba(245,121,0,0.45);
+  transition:.3s;
+  text-decoration:none;
+  display:inline-block;
+}
+
+.floating-signup:hover{
+  transform:translateX(-50%) scale(1.08);
+  background:#d96500;
+  box-shadow:0 12px 25px rgba(245,121,0,0.65);
+}
+
+.trust{
+  margin-top:16px;
+  color:#ccc;
+  font-size:14px;
+  line-height:1.5;
+}
+
+.footer{
+  margin-top:18px;
+  font-size:12px;
+  color:#aaa;
+  line-height:1.5;
+}
+
+.bonus-popup{
+  position:fixed;
+  inset:0;
+  z-index:100;
+  display:grid;
+  place-items:center;
+  padding:20px;
+  background:rgba(0,0,0,.78);
+}
+
+.bonus-popup[hidden]{
+  display:none;
+}
+
+.bonus-dialog{
+  position:relative;
+  width:min(100%,420px);
+  padding:34px 24px 28px;
+  border:2px solid #ff7900;
+  border-radius:16px;
+  background:linear-gradient(145deg,#261405,#101010 70%);
+  text-align:center;
+  box-shadow:0 18px 60px rgba(0,0,0,.65);
+  animation:popup-enter .24s ease-out;
+}
+
+.bonus-close{
+  position:absolute;
+  top:8px;
+  right:12px;
+  border:0;
+  background:transparent;
+  color:#ddd;
+  font-size:28px;
+  line-height:1;
+  cursor:pointer;
+}
+
+.bonus-dialog h2{
+  margin-bottom:10px;
+  color:#ff9b38;
+  font-size:30px;
+}
+
+.bonus-dialog p{
+  margin-bottom:22px;
+  color:#eee;
+  line-height:1.5;
+}
+
+.bonus-claim{
+  display:block;
+  padding:14px 18px;
+  border-radius:8px;
+  background:#f57900;
+  color:#fff;
+  font-size:17px;
+  font-weight:800;
+  text-decoration:none;
+}
+
+.bonus-claim:hover{
+  background:#d96500;
+}
+
+@keyframes popup-enter{
+  from{opacity:0;transform:translateY(10px) scale(.97)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .bonus-dialog{animation:none}
+}
+
+@media(max-width:768px){
+  .container{
+    flex-direction:column-reverse;
+  }
+
+  .demo,
+  .right{
+    width:100%;
+  }
+
+  iframe{
+    height:500px;
+  }
+
+  .right{
+    padding:20px;
+  }
+}
+
+@media(max-width:480px){
+  h1{
+    font-size:28px;
+  }
+
+  .sub{
+    font-size:16px;
+  }
+
+  .feature{
+    font-size:16px;
+    padding:12px;
+  }
+
+  .signup-btn{
+    font-size:14px;
+    padding:8px 13px;
+  }
+
+  .cta{
+    font-size:18px;
+    padding:15px;
+  }
+
+  .website-row{
+    flex-direction:column;
+    gap:8px;
+  }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="bonus-popup" id="bonusPopup" role="dialog" aria-modal="true" aria-labelledby="bonusTitle">
+  <div class="bonus-dialog">
+    <button class="bonus-close" id="bonusClose" type="button" aria-label="Close bonus popup">&times;</button>
+    <h2 id="bonusTitle">Claim 10% Bonus</h2>
+    <p>Sign up now and get started with the deposit bonus.</p>
+    <a class="bonus-claim" href="https://icecric.com/clk?src=27705d9eff">🔥 Claim Bonus &amp; Sign Up</a>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="demo">
+    <a href="https://icecric.com/clk?src=27705d9eff" target="_blank" rel="noopener noreferrer" class="floating-signup">🔥 CLICK ON SIGNUP 🔥</a>
+    <iframe src="https://icecric.com/clk?src=27705d9eff"></iframe>
+  </div>
+
+  <div class="right">
+    <div class="box">
+
+  <div class="badge">AUTO WEBSITE</div>
+
+  <h1>Get Your ID Now</h1>
+
+  <p class="sub">
+    Fast auto website service with easy deposit support.
+    New users can start quickly through WhatsApp.
+  </p>
+
+  <div class="features">
+
+    <div class="feature">
+      Minimum Deposit: <span>₹100 Only</span>
+    </div>
+
+    <div class="feature">
+      Welcome Bonus: <span>10%</span>
+    </div>
+
+    <div class="feature">
+      Auto Website Support:
+      <a
+        class="signup-btn"
+        href="https://icecric.com/clk?src=27705d9eff"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Click on Signup
+      </a>
+    </div>
+
+    <div class="feature">
+      Quick Help:
+      <span>Deposit &amp; Withdrawal Support</span>
+    </div>
+
+  </div>
+
+  <div class="website-row">
+
+    <a
+      class="website"
+      href="https://icecric.com/clk?src=27705d9eff"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      🌐 icecric.com
+    </a>
+
+    <a
+      class="whatsapp-small"
+      href="https://wa.me/+447542915762"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      💬 WhatsApp
+    </a>
+
+  </div>
+
+  <a
+    class="cta"
+    href="https://wa.me/+447542915762?text=Hello%20I%20want%20new%20icecric%20ID"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    📲 WhatsApp Now
+  </a>
+
+  <p class="trust">
+    ✅ Trusted icecric Support<br>
+    ✅ Simple Process<br>
+    ✅ Fast Response
+  </p>
+
+  <div class="footer">
+    18+ Only | Play Responsibly | Follow Your Local Laws | T&amp;C Apply
+  </div>
+
+</div>
+
+  </div>
+
+</div>
+
+<script>
+const bonusPopup = document.getElementById('bonusPopup');
+const bonusClose = document.getElementById('bonusClose');
+
+function closeBonusPopup(){
+  bonusPopup.hidden = true;
+}
+
+bonusClose.addEventListener('click', closeBonusPopup);
+bonusPopup.addEventListener('click', (event) => {
+  if(event.target === bonusPopup) closeBonusPopup();
+});
+document.addEventListener('keydown', (event) => {
+  if(event.key === 'Escape') closeBonusPopup();
+});
+</script>
+
+</body>
+</html>
